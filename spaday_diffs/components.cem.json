@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0.0",
+  "modules": [
+    {
+      "path": "src/ts/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "Diff",
+          "customElement": true,
+          "tagName": "spaday-diff",
+          "summary": "Pierre Diffs viewer with file comparison, patches, line selection, and annotations.",
+          "attributes": [
+            {
+              "name": "old_file",
+              "type": {
+                "text": "unknown"
+              },
+              "description": "Original {name, contents, lang?} file. Null represents an added file."
+            },
+            {
+              "name": "new_file",
+              "type": {
+                "text": "unknown"
+              },
+              "description": "Updated {name, contents, lang?} file. Null represents a deleted file."
+            },
+            {
+              "name": "patch",
+              "type": {
+                "text": "string | null"
+              },
+              "description": "Unified patch text. When non-null, takes precedence over old_file and new_file."
+            },
+            {
+              "name": "patch_file",
+              "type": {
+                "text": "number"
+              },
+              "description": "Zero-based file index across all commits in a patch. Defaults to 0."
+            },
+            {
+              "name": "selected_lines",
+              "type": {
+                "text": "unknown"
+              },
+              "description": "Selection {start, end, side?, endSide?}, using one-based lines and additions/deletions sides; null clears. Programmatic writes do not emit selection-change."
+            },
+            {
+              "name": "annotations",
+              "type": {
+                "text": "unknown"
+              },
+              "description": "Plain-text annotations [{side, line, text}], using one-based lines or 0 for a file-level note."
+            },
+            {
+              "name": "diff_style",
+              "type": {
+                "text": "'split' | 'unified'"
+              },
+              "description": "Diff layout; split by default."
+            },
+            {
+              "name": "theme",
+              "type": {
+                "text": "unknown"
+              },
+              "description": "Shiki theme name or {light, dark} theme names. Defaults to Pierre's themes."
+            },
+            {
+              "name": "theme_type",
+              "type": {
+                "text": "'light' | 'dark' | 'system'"
+              },
+              "description": "Color mode; system by default."
+            },
+            {
+              "name": "overflow",
+              "type": {
+                "text": "'scroll' | 'wrap'"
+              },
+              "description": "Code overflow; scroll by default."
+            },
+            {
+              "name": "line_numbers",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Show line numbers; true by default."
+            },
+            {
+              "name": "header",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Show the filename header; true by default."
+            },
+            {
+              "name": "indicators",
+              "type": {
+                "text": "'classic' | 'bars' | 'none'"
+              },
+              "description": "Change markers; bars by default."
+            },
+            {
+              "name": "line_diff",
+              "type": {
+                "text": "'word-alt' | 'word-line' | 'word' | 'char' | 'none'"
+              },
+              "description": "Inline highlighting granularity; word-alt by default."
+            },
+            {
+              "name": "expand_unchanged",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Expand unchanged context when full file contents are available; false by default."
+            },
+            {
+              "name": "collapsed",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Collapse code beneath the filename header; false by default."
+            },
+            {
+              "name": "selectable",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Enable line selection by click and drag; true by default."
+            }
+          ],
+          "events": [
+            {
+              "name": "selection-change",
+              "type": {
+                "text": "CustomEvent<{range: SelectedLineRange | null}>"
+              }
+            },
+            {
+              "name": "line-click",
+              "type": {
+                "text": "CustomEvent<{line: number, side: string}>"
+              }
+            },
+            {
+              "name": "render-error",
+              "type": {
+                "text": "CustomEvent<{message: string}>"
+              }
+            }
+          ],
+          "slots": []
+        }
+      ]
+    }
+  ]
+}
