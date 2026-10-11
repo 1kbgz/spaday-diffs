@@ -38,7 +38,7 @@ diffs = "spaday_diffs:package"
 
 [project.optional-dependencies]
 examples = [
-    "pydantic>=2",
+    "pydantic>=2.13.5",
     "starlette",
     "transports",
     "uvicorn",
@@ -57,7 +57,7 @@ develop = [
     "mdformat-tables>=1",
     "pytest",
     "pytest-cov",
-    "pydantic>=2",
+    "pydantic>=2.13.5",
     "ruff",
     "starlette",
     "transports",
