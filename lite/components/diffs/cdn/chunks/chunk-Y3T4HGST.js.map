@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../node_modules/.pnpm/@pierre+diffs@1.6.1_@shikijs+themes@4.5.0/node_modules/@pierre/diffs/src/utils/formatCSSVariablePrefix.ts"],
+  "sourcesContent": ["export function formatCSSVariablePrefix(type: 'global' | 'token') {\n  return `--${type === 'token' ? 'diffs-token' : 'diffs'}-`;\n}\n"],
+  "mappings": "AAAA,SAAgBA,EAAwBC,EAA0B,CAChE,MAAO,KAAKA,IAAS,QAAU,cAAgB,OAAA,GACjD",
+  "names": ["formatCSSVariablePrefix", "type"]
+}
